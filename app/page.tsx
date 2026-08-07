@@ -1,11 +1,18 @@
-import Hero from "./components/Hero";
-import Journey from "./components/Journey";
+import Hero from "./components/hero/Hero";
 
 export default function Home() {
   return (
-    <>
+    <main className="bg-black">
       <Hero />
-      <Journey />
-    </>
+
+      <section
+        id="journey"
+        className="min-h-screen bg-white text-black flex items-center justify-center"
+      >
+        <h1 className="text-6xl font-light">
+          Our Journey Begins...
+        </h1>
+      </section>
+    </main>
   );
 }
