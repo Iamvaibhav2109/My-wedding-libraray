@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────
+   Design tokens
+   ───────────────────────────────────────────────────────── */
+
+@theme {
+  --color-ink: #050505;
+  --color-ink-soft: #0c0a09;
+  --color-gold: #d4af37;
+  --color-gold-light: #f3e3ac;
+  --color-gold-deep: #8f6c1f;
+  --color-rose: #e8b4bc;
+  --color-champagne: #f7efe2;
+
+  /* `--font-script` / `--font-serif` are injected by next/font in layout.tsx. */
+  --font-heading: var(--font-script), "Great Vibes", cursive;
+  --font-body: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gold-gradient: linear-gradient(
+    100deg,
+    #8f6c1f 0%,
+    #d4af37 22%,
+    #fbf3cf 45%,
+    #d4af37 68%,
+    #8f6c1f 100%
+  );
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─────────────────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────────────────── */
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Sticky navbar clearance for #anchor jumps */
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: #f5f2ec;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #fff;
+}
+
+/* Slim gold scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#8f6c1f, #d4af37);
+  border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Utilities
+   ───────────────────────────────────────────────────────── */
+
+/** Foil-stamped gold lettering (kept separate from the plain `text-gold` colour). */
+@utility text-foil {
+  background: var(--gold-gradient);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: foil 7s linear infinite;
+}
+
+/** Thin gold hairline used to frame cards. */
+@utility border-gold-hairline {
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+/** Frosted card surface used across every section. */
+@utility glass {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility tracking-luxe {
+  letter-spacing: 0.42em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Keyframes
+   ───────────────────────────────────────────────────────── */
+
+@keyframes foil {
+  to {
+    background-position: 220% center;
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(320%) skewX(-18deg);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Respect the user's motion preference — this site is animation-heavy. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

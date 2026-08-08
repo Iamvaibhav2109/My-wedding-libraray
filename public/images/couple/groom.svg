@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1250" viewBox="0 0 1000 1250">
+  <defs>
+    <linearGradient id="g33a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1a24"/>
+      <stop offset="55%" stop-color="#4c3f5a"/>
+      <stop offset="100%" stop-color="#1c1a24"/>
+    </linearGradient>
+    <radialGradient id="g33b" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#c9a6d8" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#c9a6d8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g33c" cx="50%" cy="50%" r="75%">
+      <stop offset="45%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".65"/>
+    </radialGradient>
+    <filter id="g33n">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1250" fill="url(#g33a)"/>
+  <rect width="1000" height="1250" fill="url(#g33b)"/>
+
+  <g opacity=".35" fill="none" stroke="#c9a6d8" stroke-width="1.5">
+    <circle cx="500" cy="525" r="260"/>
+    <circle cx="500" cy="525" r="330" opacity=".5"/>
+  </g>
+
+  <rect width="1000" height="1250" fill="url(#g33c)"/>
+  <rect width="1000" height="1250" filter="url(#g33n)" opacity=".07"/>
+
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="500" y="650" font-size="75"
+      fill="#ffffff" fill-opacity=".92" letter-spacing="12">Vaibhav</text>
+    <text x="500" y="750" font-size="32"
+      fill="#c9a6d8" fill-opacity=".9" letter-spacing="10">THE GROOM</text>
+  </g>
+</svg>

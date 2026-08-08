@@ -1,29 +1,27 @@
 "use client";
 
 import Background from "./Background";
+import HeroContent from "./HeroContent";
 import FloatingPetals from "./FloatingPetals";
-import HeroCard from "./HeroCard";
-import Navbar from "../Navbar";
+import MusicButton from "./MusicButton";
+import ScrollIndicator from "./ScrollIndicator";
 
-export default function Hero() {
+type HeroProps = {
+  musicEnabled: boolean;
+};
+
+export default function Hero({ musicEnabled }: HeroProps) {
   return (
-    <section
-      id="hero"
-      className="relative h-screen overflow-hidden"
-    >
-       <Navbar />
-
-      {/* Cinematic Background */}
+    <section id="home" className="relative min-h-screen overflow-hidden">
       <Background />
 
-      {/* Flower Petals */}
       <FloatingPetals />
 
-      {/* Center Content */}
-        <div className="relative z-20 flex min-h-screen items-center justify-center px-6">
-         <HeroCard />
-      </div>
+      <MusicButton enabled={musicEnabled} />
 
+      <HeroContent />
+
+      <ScrollIndicator />
     </section>
   );
 }

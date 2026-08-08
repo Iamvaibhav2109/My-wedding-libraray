@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="g20a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#251419"/>
+      <stop offset="55%" stop-color="#71313f"/>
+      <stop offset="100%" stop-color="#251419"/>
+    </linearGradient>
+    <radialGradient id="g20b" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#e2a3b0" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#e2a3b0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g20c" cx="50%" cy="50%" r="75%">
+      <stop offset="45%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".65"/>
+    </radialGradient>
+    <filter id="g20n">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1600" fill="url(#g20a)"/>
+  <rect width="1200" height="1600" fill="url(#g20b)"/>
+
+  <g opacity=".35" fill="none" stroke="#e2a3b0" stroke-width="1.5">
+    <circle cx="600" cy="672" r="312"/>
+    <circle cx="600" cy="672" r="396" opacity=".5"/>
+  </g>
+
+  <rect width="1200" height="1600" fill="url(#g20c)"/>
+  <rect width="1200" height="1600" filter="url(#g20n)" opacity=".07"/>
+
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="600" y="832" font-size="90"
+      fill="#ffffff" fill-opacity=".92" letter-spacing="14">Stolen Glance</text>
+    <text x="600" y="960" font-size="38"
+      fill="#e2a3b0" fill-opacity=".9" letter-spacing="12">MEMORY 09</text>
+  </g>
+</svg>
