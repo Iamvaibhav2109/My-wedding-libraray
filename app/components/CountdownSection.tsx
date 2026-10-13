@@ -1,28 +1,26 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useMemo } from "react";
 
-import { couple, weddingDate, weddingDateLabel } from "@/app/data/site";
+import { couple, weddingDate } from "@/app/data/site";
 import { useCountdown } from "@/app/hooks/useCountdown";
 import { GoldDivider, Reveal, Section, SplitText } from "./Common";
 
-/** Single digit that flips when its value changes. */
+/**
+ * Single digit that drops in when its value changes. The old digit is removed
+ * immediately (no exit animation), so two digits can never stack on top of
+ * each other. It's a CSS animation keyed on the digit: if the browser pauses
+ * animation (background tab, hidden preview), the digit still shows in full.
+ */
 function FlipDigit({ digit }: { digit: string }) {
   return (
-    <span className="relative inline-block h-[1.1em] w-[0.62em] overflow-hidden">
-      <AnimatePresence mode="popLayout" initial={false}>
-        <motion.span
-          key={digit}
-          initial={{ y: "-100%", opacity: 0 }}
-          animate={{ y: "0%", opacity: 1 }}
-          exit={{ y: "100%", opacity: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 flex items-center justify-center"
-        >
-          {digit}
-        </motion.span>
-      </AnimatePresence>
+    // Fixed width so the number doesn't shift as digits change; no clipping
+    // box, so the full height of every digit always shows.
+    <span className="inline-block w-[0.6em] text-center">
+      <span key={digit} className="inline-block animate-digit-drop">
+        {digit}
+      </span>
     </span>
   );
 }
@@ -32,20 +30,20 @@ function Unit({ value, label }: { value: number; label: string }) {
 
   return (
     <div className="relative">
-      <div className="glass relative flex h-28 w-24 flex-col items-center justify-center rounded-2xl md:h-36 md:w-32">
-        <div className="flex font-body text-4xl font-light tabular-nums text-gold-light md:text-6xl">
+      <div className="glass relative flex h-24 w-full flex-col items-center justify-center rounded-2xl md:h-36 md:w-32">
+        <div className="flex font-body text-3xl font-light tabular-nums text-gold-light md:text-6xl">
           {digits.map((digit, i) => (
             <FlipDigit key={i} digit={digit} />
           ))}
         </div>
 
-        <span className="mt-2 text-[0.55rem] uppercase tracking-[0.28em] text-white/45 md:text-[0.62rem]">
+        <span className="mt-1.5 text-[0.5rem] uppercase tracking-[0.1em] text-white/45 md:mt-2 md:text-[0.62rem] md:tracking-[0.28em]">
           {label}
         </span>
 
         {/* Corner ticks */}
-        <span className="absolute left-3 top-3 h-3 w-3 border-l border-t border-gold/50" />
-        <span className="absolute bottom-3 right-3 h-3 w-3 border-b border-r border-gold/50" />
+        <span className="absolute left-2 top-2 h-2.5 w-2.5 md:left-3 md:top-3 md:h-3 md:w-3 border-l border-t border-gold/50" />
+        <span className="absolute bottom-2 right-2 h-2.5 w-2.5 md:bottom-3 md:right-3 md:h-3 md:w-3 border-b border-r border-gold/50" />
       </div>
     </div>
   );
@@ -80,13 +78,18 @@ export default function CountdownSection() {
           </p>
         </Reveal>
 
-        <h2 className="mt-6 font-heading text-5xl text-foil md:text-7xl">
-          <SplitText text={arrived ? "It's Today" : "Until We Say I Do"} delay={0.1} />
+        <h2 className="mt-6 font-heading text-4xl leading-tight md:text-7xl">
+          <SplitText
+            // Non-breaking space keeps "I Do" together on one line.
+            text={arrived ? "It's Today" : "Until We Say I Do"}
+            delay={0.1}
+            wordClassName="text-foil"
+          />
         </h2>
 
         <GoldDivider className="mt-8" />
 
-        <div className="mt-14 flex flex-wrap items-center justify-center gap-4 md:gap-6">
+        <div className="mx-auto mt-14 grid max-w-md grid-cols-4 gap-2 md:flex md:max-w-none md:flex-wrap md:items-center md:justify-center md:gap-6">
           {units.map((unit, i) => (
             <motion.div
               key={unit.label}
@@ -101,13 +104,9 @@ export default function CountdownSection() {
         </div>
 
         <Reveal delay={0.3}>
-          <p className="mt-14 text-sm uppercase tracking-[0.3em] text-white/50">
-            {weddingDateLabel.day} · {weddingDateLabel.long} · {weddingDateLabel.time}
-          </p>
-
           <p
             lang="sa"
-            className="mt-6 whitespace-pre-line text-xl font-bold leading-relaxed text-gold-light md:text-3xl"
+            className="mt-14 whitespace-pre-line text-xl font-bold leading-relaxed text-gold-light md:text-3xl"
           >
             {couple.quote}
           </p>

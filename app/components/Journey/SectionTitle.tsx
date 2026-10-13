@@ -15,8 +15,8 @@ export default function SectionTitle() {
         <SplitText text="Every Love Story" delay={0.1} />
       </h2>
 
-      <h2 className="mt-2 font-heading text-5xl leading-tight text-foil md:text-7xl">
-        <SplitText text="Has A Beginning" delay={0.35} />
+      <h2 className="mt-2 font-heading text-5xl leading-tight md:text-7xl">
+        <SplitText text="Has A Beginning" delay={0.35} wordClassName="text-foil" />
       </h2>
 
       <GoldDivider className="mt-10" />

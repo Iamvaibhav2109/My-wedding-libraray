@@ -29,11 +29,4 @@
 
   <rect width="1920" height="1200" fill="url(#g35c)"/>
   <rect width="1920" height="1200" filter="url(#g35n)" opacity=".07"/>
-
-  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
-    <text x="960" y="624" font-size="90"
-      fill="#ffffff" fill-opacity=".92" letter-spacing="14">Thank You</text>
-    <text x="960" y="720" font-size="38"
-      fill="#a8d0bd" fill-opacity=".9" letter-spacing="12">WITH ALL OUR LOVE</text>
-  </g>
 </svg>

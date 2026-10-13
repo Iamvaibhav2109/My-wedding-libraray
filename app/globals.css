@@ -86,8 +86,7 @@ body {
   color: transparent;
   animation: foil 7s linear infinite;
   /* Script glyphs overhang their box; without room the clip cuts the last letter. */
-  padding-inline: 0.12em;
-  padding-bottom: 0.12em;
+  padding: 0.12em 0.16em 0.18em;
 }
 
 /** Thin gold hairline used to frame cards. */
@@ -101,6 +100,16 @@ body {
   border: 1px solid rgba(240, 160, 48, 0.22);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+}
+
+/* Backdrop blur re-rasterises every frame while a parent animates, which makes
+   phones flicker. Use a slightly more opaque flat surface there instead. */
+@media (max-width: 767px) {
+  .glass {
+    background: rgba(20, 10, 6, 0.55);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 @utility tracking-luxe {
@@ -162,6 +171,19 @@ body {
 
 .animate-marquee {
   animation: marquee 28s linear infinite;
+}
+
+/* Countdown digit drop-in. No fill-mode: when it ends (or never runs) the
+   digit sits in its normal, fully visible position. */
+@keyframes digit-drop {
+  from {
+    transform: translateY(-30%);
+    opacity: 0.45;
+  }
+}
+
+.animate-digit-drop {
+  animation: digit-drop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Respect the user's motion preference — this site is animation-heavy. */

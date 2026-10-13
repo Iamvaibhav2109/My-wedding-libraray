@@ -72,7 +72,7 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
         <div
           className={`transition-all duration-500 ${
             scrolled
-              ? "border-b border-gold/20 bg-black/70 backdrop-blur-xl"
+              ? "border-b border-gold/20 bg-black/85 md:bg-black/70 md:backdrop-blur-xl"
               : "border-b border-transparent bg-transparent"
           }`}
         >
@@ -82,11 +82,18 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
               className="flex items-center"
             >
               <span
-                className="inline-flex items-center justify-center font-heading text-3xl leading-none tracking-[-0.12em] text-foil"
+                className="flex flex-col items-center gap-1"
                 aria-label={`${couple.bride.name} and ${couple.groom.name}`}
               >
-                {couple.bride.name[0]}
-                {couple.groom.name[0]}
+                <span className="font-body text-3xl font-semibold leading-none tracking-[-0.2em] text-foil">
+                  {couple.bride.name[0]}
+                  {couple.groom.name[0]}
+                </span>
+                <span aria-hidden className="flex items-center gap-1">
+                  <span className="h-px w-3 bg-gold/70" />
+                  <span className="h-1 w-1 rotate-45 bg-gold" />
+                  <span className="h-px w-3 bg-gold/70" />
+                </span>
               </span>
             </button>
 
@@ -138,16 +145,23 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[300] bg-black/95 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-[300] bg-black/95 lg:hidden"
           >
             <div className="flex items-center justify-between px-6 py-4">
               <span className="flex items-center">
                 <span
-                className="inline-flex items-center justify-center font-heading text-3xl leading-none tracking-[-0.12em] text-foil"
+                className="flex flex-col items-center gap-1"
                 aria-label={`${couple.bride.name} and ${couple.groom.name}`}
               >
-                {couple.bride.name[0]}
-                {couple.groom.name[0]}
+                <span className="font-body text-3xl font-semibold leading-none tracking-[-0.2em] text-foil">
+                  {couple.bride.name[0]}
+                  {couple.groom.name[0]}
+                </span>
+                <span aria-hidden className="flex items-center gap-1">
+                  <span className="h-px w-3 bg-gold/70" />
+                  <span className="h-1 w-1 rotate-45 bg-gold" />
+                  <span className="h-px w-3 bg-gold/70" />
+                </span>
               </span>
               </span>
               <button

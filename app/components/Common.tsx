@@ -36,6 +36,7 @@ export function Reveal({
   return (
     <motion.div
       className={className}
+      style={{ willChange: "transform, opacity" }}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.08 }}
@@ -46,47 +47,47 @@ export function Reveal({
   );
 }
 
-/** Letter-by-letter entrance for short display lines. */
+/**
+ * Word-by-word entrance for short display lines.
+ *
+ * Whole words animate (not single letters) so script faces keep their joined
+ * letterforms. Put any gradient text style in `wordClassName`, never on the
+ * parent: `background-clip: text` on a parent doesn't paint children that
+ * have their own transform, so the gold fill would be cut off.
+ */
 export function SplitText({
   text,
   className = "",
+  wordClassName = "",
   delay = 0,
 }: {
   text: string;
   className?: string;
+  wordClassName?: string;
   delay?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <span ref={ref} className={`inline-block ${className}`}>
-      {text.split(" ").map((word, w, words) => {
-        // Index of this word's first letter, so the stagger runs across words.
-        const offset = words.slice(0, w).reduce((n, x) => n + x.length + 1, 0);
-        return (
-          <Fragment key={`${word}-${w}`}>
-          <span className="inline-block whitespace-nowrap">
-            {word.split("").map((char, i) => (
-              <motion.span
-                key={`${char}-${i}`}
-                className="inline-block"
-                initial={{ opacity: 0, y: 40, rotateX: -60 }}
-                animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : undefined}
-                transition={{
-                  duration: 0.7,
-                  delay: delay + (offset + i) * 0.035,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </span>
+    <span ref={ref} className={className}>
+      {text.split(" ").map((word, w, words) => (
+        <Fragment key={`${word}-${w}`}>
+          <motion.span
+            className={`inline-block whitespace-nowrap ${wordClassName}`}
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : undefined}
+            transition={{
+              duration: 0.8,
+              delay: delay + w * 0.12,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            {word}
+          </motion.span>
           {w < words.length - 1 ? " " : null}
-          </Fragment>
-        );
-      })}
+        </Fragment>
+      ))}
     </span>
   );
 }
@@ -143,11 +144,11 @@ export function SectionHeading({
       <h2
         className={
           script
-            ? "mt-6 font-heading text-5xl leading-tight text-foil md:text-7xl"
+            ? "mt-6 font-heading text-5xl leading-tight md:text-7xl"
             : "mt-6 font-body text-4xl font-light uppercase tracking-[0.18em] text-white md:text-5xl"
         }
       >
-        <SplitText text={title} delay={0.15} />
+        <SplitText text={title} delay={0.15} wordClassName={script ? "text-foil" : ""} />
       </h2>
 
       <GoldDivider className="mt-8" />

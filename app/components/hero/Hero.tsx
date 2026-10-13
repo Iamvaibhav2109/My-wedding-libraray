@@ -11,7 +11,7 @@ type HeroProps = {
 
 export default function Hero({ musicEnabled }: HeroProps) {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section id="home" className="relative min-h-svh overflow-hidden">
       <Background />
 
       <FloatingPetals />

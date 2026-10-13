@@ -20,12 +20,12 @@ export default function Cover({ onOpen }: CoverProps) {
     >
       {/* Backdrop */}
       <motion.div
-        animate={{ scale: [1, 1.1, 1] }}
+        animate={{ scale: [1.35, 1.5, 1.35] }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
         className="fixed inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/ganesh.jpg')",
-          backgroundPosition: "72% center",
+          backgroundPosition: "72% 78%",
         }}
       />
 

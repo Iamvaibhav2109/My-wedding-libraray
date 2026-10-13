@@ -8,17 +8,13 @@ export default function Background() {
 
       {/* Background Image */}
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 will-change-transform"
         initial={{
           scale: 1,
           x: 0,
           y: 0,
         }}
-        animate={{
-          scale: [1, 1.08, 1],
-          x: [0, -20, 20, 0],
-          y: [0, -10, 10, 0],
-        }}
+        animate={{ scale: [1.04, 1.1, 1.04] }}
         transition={{
           duration: 35,
           repeat: Infinity,
@@ -87,6 +83,7 @@ export default function Background() {
           repeat: Infinity,
         }}
         className="
+        hidden md:block
         absolute
         -left-32
         top-1/3
@@ -109,6 +106,7 @@ export default function Background() {
           repeat: Infinity,
         }}
         className="
+        hidden md:block
         absolute
         -right-32
         bottom-20
@@ -130,7 +128,7 @@ export default function Background() {
       />
 
       {/* Decorative Light Rays */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
+      <div className="absolute inset-0 hidden overflow-hidden opacity-20 md:block">
 
         <motion.div
           animate={{

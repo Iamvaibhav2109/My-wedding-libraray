@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 
 import { couple, invitation, weddingDateLabel } from "@/app/data/site";
-import { CornerFrame, GoldButton, GoldDivider, Reveal, Section, SplitText } from "./Common";
+import { CornerFrame, GoldButton, GoldDivider, Reveal, Section } from "./Common";
 
 function Person({
   person,
@@ -94,7 +94,7 @@ export default function Invitation() {
                   &amp;
                 </motion.span>
                 <span className="font-heading text-5xl text-foil md:text-7xl">
-                  {couple.groom.fullName}
+                  {couple.groom.name}
                 </span>
               </div>
 

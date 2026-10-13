@@ -11,7 +11,7 @@ const nameShadow = "[text-shadow:0_4px_30px_rgba(0,0,0,.75),0_0_2px_rgba(0,0,0,.
 export default function HeroContent() {
   return (
     // Content sits low so the couple in the background photo stays in clear view.
-    <div className="relative z-20 flex min-h-screen items-end justify-center px-6 pb-16 pt-28 md:pb-20">
+    <div className="relative z-20 flex min-h-svh items-end justify-center px-6 pb-16 pt-28 md:pb-20">
       <div className="mx-auto w-full max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: -16 }}

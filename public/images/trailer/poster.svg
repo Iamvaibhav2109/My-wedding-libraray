@@ -29,11 +29,4 @@
 
   <rect width="1920" height="1080" fill="url(#g32c)"/>
   <rect width="1920" height="1080" filter="url(#g32n)" opacity=".07"/>
-
-  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
-    <text x="960" y="561.6" font-size="81"
-      fill="#ffffff" fill-opacity=".92" letter-spacing="13">Our Wedding Film</text>
-    <text x="960" y="648" font-size="35"
-      fill="#d9b877" fill-opacity=".9" letter-spacing="11">PLAY TRAILER</text>
-  </g>
 </svg>

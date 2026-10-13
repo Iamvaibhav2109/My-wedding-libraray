@@ -32,8 +32,8 @@ export default function Trailer() {
             </p>
           </Reveal>
 
-          <h2 className="mt-6 font-heading text-5xl text-foil md:text-7xl">
-            <SplitText text={trailer.title} delay={0.1} />
+          <h2 className="mt-6 font-heading text-5xl leading-tight md:text-7xl">
+            <SplitText text={trailer.title} delay={0.1} wordClassName="text-foil" />
           </h2>
 
           <GoldDivider className="mt-8" />

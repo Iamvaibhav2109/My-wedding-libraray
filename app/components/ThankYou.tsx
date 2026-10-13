@@ -27,7 +27,7 @@ export default function ThankYou() {
     <footer
       ref={ref}
       id="thank-you"
-      className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-ink"
+      className="relative flex min-h-svh flex-col justify-between overflow-hidden bg-ink"
     >
       {/* Backdrop */}
       <motion.div
@@ -77,8 +77,8 @@ export default function ThankYou() {
             </p>
           </Reveal>
 
-          <h2 className="mt-8 font-heading text-6xl text-foil md:text-8xl">
-            <SplitText text={thankYou.title} delay={0.1} />
+          <h2 className="mt-8 font-heading text-6xl leading-tight md:text-8xl">
+            <SplitText text={thankYou.title} delay={0.1} wordClassName="text-foil" />
           </h2>
 
           <GoldDivider className="mt-10" />
