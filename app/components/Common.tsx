@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+import { Fragment, useRef, type ReactNode } from "react";
 
 /* ─────────────────────────────────────────────────────────
    Shared building blocks used by every section.
@@ -38,7 +38,7 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.08 }}
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
@@ -57,25 +57,36 @@ export function SplitText({
   delay?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.4 });
+  const inView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <span ref={ref} className={`inline-block ${className}`}>
-      {text.split("").map((char, i) => (
-        <motion.span
-          key={`${char}-${i}`}
-          className="inline-block"
-          initial={{ opacity: 0, y: 40, rotateX: -60 }}
-          animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : undefined}
-          transition={{
-            duration: 0.7,
-            delay: delay + i * 0.035,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          {char === " " ? " " : char}
-        </motion.span>
-      ))}
+      {text.split(" ").map((word, w, words) => {
+        // Index of this word's first letter, so the stagger runs across words.
+        const offset = words.slice(0, w).reduce((n, x) => n + x.length + 1, 0);
+        return (
+          <Fragment key={`${word}-${w}`}>
+          <span className="inline-block whitespace-nowrap">
+            {word.split("").map((char, i) => (
+              <motion.span
+                key={`${char}-${i}`}
+                className="inline-block"
+                initial={{ opacity: 0, y: 40, rotateX: -60 }}
+                animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : undefined}
+                transition={{
+                  duration: 0.7,
+                  delay: delay + (offset + i) * 0.035,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
+          {w < words.length - 1 ? " " : null}
+          </Fragment>
+        );
+      })}
     </span>
   );
 }

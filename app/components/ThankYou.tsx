@@ -9,7 +9,6 @@ import {
   couple,
   navLinks,
   thankYou,
-  weddingDateLabel,
 } from "@/app/data/site";
 import { GoldDivider, Reveal, SplitText } from "./Common";
 
@@ -104,11 +103,7 @@ export default function ThankYou() {
               {thankYou.signature}
             </p>
 
-            <p className="mt-6 text-sm uppercase tracking-[0.3em] text-gold-light/70">
-              {weddingDateLabel.long}
-            </p>
-
-            <p className="mt-3 text-[0.65rem] uppercase tracking-luxe text-gold">
+            <p className="mt-6 text-xs uppercase tracking-luxe text-gold">
               {couple.hashtag}
             </p>
           </Reveal>
@@ -119,7 +114,7 @@ export default function ThankYou() {
       <div className="relative z-10 border-t border-gold/15">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 md:flex-row md:justify-between">
           <p className="text-[0.6rem] uppercase tracking-[0.24em] text-white/35">
-            © {new Date().getFullYear()} {couple.groom.name} &amp; {couple.bride.name}
+            © {new Date().getFullYear()} {couple.bride.name} &amp; {couple.groom.name}
           </p>
 
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">

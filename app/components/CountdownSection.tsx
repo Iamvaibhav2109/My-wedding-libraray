@@ -105,9 +105,13 @@ export default function CountdownSection() {
             {weddingDateLabel.day} · {weddingDateLabel.long} · {weddingDateLabel.time}
           </p>
 
-          <p className="mt-6 font-heading text-3xl text-white/70 md:text-4xl">
+          <p
+            lang="sa"
+            className="mt-6 whitespace-pre-line text-xl font-bold leading-relaxed text-gold-light md:text-3xl"
+          >
             {couple.quote}
           </p>
+          <p className="mt-2 italic text-white/60">{couple.quoteMeaning}</p>
         </Reveal>
       </div>
     </Section>

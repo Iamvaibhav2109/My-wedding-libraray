@@ -68,7 +68,7 @@ export default function Families() {
 
       <div className="mx-auto mt-20 max-w-6xl px-6">
         <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:gap-6">
-          <SideColumn family={families.groom} from="left" />
+          <SideColumn family={families.bride} from="left" />
 
           {/* Centre ornament */}
           <Reveal delay={0.2} className="flex items-center justify-center">
@@ -86,7 +86,7 @@ export default function Families() {
             </div>
           </Reveal>
 
-          <SideColumn family={families.bride} from="right" />
+          <SideColumn family={families.groom} from="right" />
         </div>
       </div>
     </Section>

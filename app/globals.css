@@ -85,6 +85,9 @@ body {
   background-clip: text;
   color: transparent;
   animation: foil 7s linear infinite;
+  /* Script glyphs overhang their box; without room the clip cuts the last letter. */
+  padding-inline: 0.12em;
+  padding-bottom: 0.12em;
 }
 
 /** Thin gold hairline used to frame cards. */

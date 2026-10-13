@@ -34,8 +34,6 @@ export default function Home() {
 
       <Hero musicEnabled={opened} />
 
-      <Trailer />
-
       <Invitation />
 
       {/* Hidden for now: <Journey /> */}
@@ -49,6 +47,8 @@ export default function Home() {
       <CountdownSection />
 
       <Families />
+
+      <Trailer />
 
       <ThankYou />
     </main>

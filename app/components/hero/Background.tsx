@@ -26,15 +26,15 @@ export default function Background() {
         }}
       >
         <div
-          className="h-full w-full bg-cover bg-center"
+          className="h-full w-full bg-cover bg-[position:50%_62%]"
           style={{
-            backgroundImage: "url('/images/hero.jpg')",
+            backgroundImage: "url('/images/couple-arch.jpg')",
           }}
         />
       </motion.div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-[#1a0a04]/40" />
 
       {/* Luxury Gold Glow */}
       <motion.div
@@ -125,7 +125,7 @@ export default function Background() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle, transparent 40%, rgba(0,0,0,.85) 100%)",
+            "radial-gradient(circle, transparent 45%, rgba(0,0,0,.6) 100%)",
         }}
       />
 

@@ -4,7 +4,6 @@ import Background from "./Background";
 import HeroContent from "./HeroContent";
 import FloatingPetals from "./FloatingPetals";
 import MusicButton from "./MusicButton";
-import ScrollIndicator from "./ScrollIndicator";
 
 type HeroProps = {
   musicEnabled: boolean;
@@ -21,7 +20,6 @@ export default function Hero({ musicEnabled }: HeroProps) {
 
       <HeroContent />
 
-      <ScrollIndicator />
     </section>
   );
 }

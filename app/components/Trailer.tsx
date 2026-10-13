@@ -51,7 +51,7 @@ export default function Trailer() {
             <motion.div style={{ y: posterY, scale: posterScale }} className="absolute inset-0">
               <Image
                 src={trailer.poster}
-                alt={`${couple.groom.name} and ${couple.bride.name} wedding trailer`}
+                alt={`${couple.bride.name} and ${couple.groom.name} wedding trailer`}
                 fill
                 sizes="(max-width: 768px) 100vw, 1100px"
                 className="object-cover"

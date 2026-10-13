@@ -19,11 +19,11 @@ export type Nav = {
 
 export const navLinks: Nav[] = [
   { id: "home", label: "Home" },
-  { id: "trailer", label: "Trailer" },
   { id: "invitation", label: "Invitation" },
   { id: "venue", label: "Venue" },
   { id: "countdown", label: "Countdown" },
   { id: "families", label: "Our Families" },
+  { id: "trailer", label: "Trailer" },
 ];
 
 export const couple = {
@@ -45,8 +45,9 @@ export const couple = {
       "The one who turns ordinary days into stories worth retelling, and quiet evenings into favourite memories.",
     image: "/images/couple/bride.svg",
   },
-  hashtag: "#VaibhavWedsAarohi",
-  quote: "Every love story is beautiful, but ours is my favourite.",
+  hashtag: "#VaibhavKiAarohi",
+  quote: "यदिदं हृदयं मम तदस्तु हृदयं तव ।\nयदिदं हृदयं तव तदस्तु हृदयं मम ॥",
+  quoteMeaning: "May my heart be yours, and your heart be mine.",
 };
 
 /** ISO date-time of the wedding muhurat. Drives the countdown everywhere. */
@@ -77,9 +78,12 @@ export const trailer = {
 export const invitation = {
   eyebrow: "The Invitation",
   title: "Together With Our Families",
-  blessing: "|| श्री गणेशाय नमः ||",
-  message:
-    "We invite you to share in our joy as we exchange vows and begin our forever. Your presence is the blessing we wish for most.",
+  intro: "We joyfully invite you to celebrate the wedding of",
+  /** Shown under the names, one paragraph each. */
+  message: [
+    "As two hearts unite and two families come together, we look forward to beginning a beautiful journey of love, laughter, and togetherness.",
+    "Your presence and blessings will make our special day even more memorable.",
+  ],
   closing: "Requesting the honour of your presence",
   paper: "/images/invitation/paper.svg",
   /**
@@ -305,9 +309,10 @@ export const families = {
       { name: "Late Shri Dharam Pal Agarwal", relation: "Grandfather" },
       { name: "Late Smt. Anju Agrawal", relation: "Mother of the Bride" },
       { name: "Sh. Sanjay Aggarwal", relation: "Father of the Bride" },
+      { name: "Anushka Bhagat", relation: "Sister of the Bride" },
+      { name: "Rohit Bhagat", relation: "Brother-in-law" },
       { name: "Atharv Agarwal", relation: "Brother of the Bride" },
-      { name: "Anushka Agarwal", relation: "Sister of the Bride" },
-      { name: "Rohit Agrawal", relation: "Brother-in-law" },
+      { name: "Inika Bhagat", relation: "Niece" },
     ],
   } satisfies FamilySide,
 };
@@ -319,6 +324,6 @@ export const thankYou = {
   title: "Thank You",
   message:
     "For every blessing, every journey made, and every wish sent our way — thank you. You did not just attend our wedding, you made it ours.",
-  signature: "Vaibhav & Aarohi",
+  signature: "Aarohi & Vaibhav",
   image: "/images/couple/thankyou.svg",
 };

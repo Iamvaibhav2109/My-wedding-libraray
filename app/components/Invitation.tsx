@@ -56,88 +56,79 @@ function Person({
 export default function Invitation() {
   return (
     <Section id="invitation">
-      <div className="mx-auto max-w-6xl px-6">
+      <div id="invitation-card" className="mx-auto max-w-6xl px-6">
         {/* Invitation card */}
         <Reveal from="none">
           <motion.div
             initial={{ rotateX: 18, opacity: 0, y: 60 }}
             whileInView={{ rotateX: 0, opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.08 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             style={{ transformPerspective: 1200 }}
             className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] px-6 py-16 text-center md:px-16 md:py-20"
           >
-            <Image
-              src={invitation.paper}
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover opacity-30"
-            />
             <div className="absolute inset-0 bg-black/70" />
             <div className="absolute inset-0 glass rounded-[2rem]" />
 
             <CornerFrame />
 
             <div className="relative z-10">
-              <p className="font-body text-sm tracking-[0.2em] text-gold-light">
-                {invitation.blessing}
-              </p>
-
-              <p className="mt-10 text-[0.68rem] uppercase tracking-luxe text-gold">
+              <p className="text-[0.68rem] uppercase tracking-luxe text-gold">
                 {invitation.eyebrow}
               </p>
 
-              <h2 className="mt-6 font-body text-2xl font-light uppercase tracking-[0.2em] text-white/85 md:text-3xl">
-                <SplitText text={invitation.title} delay={0.1} />
-              </h2>
+              <p className="mx-auto mt-8 max-w-md text-lg text-white/80 md:text-xl">
+                {invitation.intro}
+              </p>
 
-              <div className="mt-10 flex items-center justify-center gap-5 md:gap-8">
-                <span className="font-heading text-5xl text-foil md:text-7xl">
-                  {couple.groom.name}
-                </span>
-                <motion.span
-                  whileInView={{ scale: [1, 1.18, 1] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2.2, repeat: Infinity }}
-                  className="text-2xl text-rose md:text-3xl"
-                >
-                  ❤
-                </motion.span>
+              <div className="mt-8 flex flex-col items-center gap-2">
                 <span className="font-heading text-5xl text-foil md:text-7xl">
                   {couple.bride.name}
+                </span>
+                <motion.span
+                  whileInView={{ scale: [1, 1.12, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 2.2, repeat: Infinity }}
+                  className="font-heading text-4xl text-gold md:text-5xl"
+                >
+                  &amp;
+                </motion.span>
+                <span className="font-heading text-5xl text-foil md:text-7xl">
+                  {couple.groom.fullName}
                 </span>
               </div>
 
               <GoldDivider className="mt-10" />
 
-              <p className="mx-auto mt-10 max-w-xl text-base leading-relaxed text-white/65 md:text-lg">
-                {invitation.message}
-              </p>
+              <div className="mx-auto mt-10 max-w-xl space-y-5 text-lg leading-relaxed text-white/80 md:text-2xl">
+                {invitation.message.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
 
               {/* Date block */}
-              <div className="mt-12 flex items-center justify-center gap-6 md:gap-10">
-                <div className="text-right">
-                  <p className="text-[0.6rem] uppercase tracking-[0.3em] text-white/50">
+              <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:gap-10">
+                <div className="sm:text-right">
+                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold-light md:text-xl">
                     {weddingDateLabel.day}
                   </p>
                 </div>
 
-                <div className="border-x border-gold/30 px-6 md:px-10">
-                  <p className="font-heading text-4xl text-gold-light md:text-6xl">26</p>
-                  <p className="mt-1 text-[0.6rem] uppercase tracking-[0.3em] text-white/60">
+                <div className="border-y border-gold/30 px-8 py-3 sm:border-x sm:border-y-0 sm:px-6 sm:py-0 md:px-10">
+                  <p className="font-heading text-7xl text-foil md:text-9xl">26</p>
+                  <p className="mt-1 text-base font-semibold uppercase tracking-[0.25em] text-gold-light md:text-2xl">
                     November
                   </p>
                 </div>
 
-                <div className="text-left">
-                  <p className="text-[0.6rem] uppercase tracking-[0.3em] text-white/50">
+                <div className="sm:text-left">
+                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold-light md:text-xl">
                     2026
                   </p>
                 </div>
               </div>
 
-              <p className="mt-8 text-sm uppercase tracking-[0.28em] text-white/55">
+              <p className="mt-8 text-base font-semibold uppercase tracking-[0.25em] text-gold-light md:text-xl">
                 {weddingDateLabel.time}
               </p>
 
@@ -158,7 +149,7 @@ export default function Invitation() {
 
         {/* Couple */}
         <div className="mt-24 flex flex-col items-center gap-16 md:flex-row md:items-start md:gap-10">
-          <Person person={couple.groom} side="left" />
+          <Person person={couple.bride} side="left" />
 
           <Reveal delay={0.2} className="md:pt-24">
             <div className="text-center">
@@ -176,7 +167,7 @@ export default function Invitation() {
             </div>
           </Reveal>
 
-          <Person person={couple.bride} side="right" />
+          <Person person={couple.groom} side="right" />
         </div>
       </div>
     </Section>

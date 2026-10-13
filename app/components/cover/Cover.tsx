@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import { couple, weddingDateLabel } from "@/app/data/site";
 import { CornerFrame } from "../Common";
+import FallingFlowers from "../FallingFlowers";
 
 type CoverProps = {
   onOpen: () => void;
@@ -15,49 +16,39 @@ export default function Cover({ onOpen }: CoverProps) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.08, filter: "blur(14px)" }}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-0 z-[500] flex items-center justify-center overflow-hidden bg-ink"
+      className="fixed inset-0 z-[500] flex overflow-y-auto overflow-x-hidden bg-ink"
     >
       {/* Backdrop */}
       <motion.div
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 bg-cover bg-center"
+        className="fixed inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/ganesh.jpg')",
           backgroundPosition: "72% center",
         }}
       />
 
-      <div className="absolute inset-0 bg-[#1a0a04]/55" />
+      <div className="fixed inset-0 bg-[#1a0a04]/55" />
 
       <div
         aria-hidden
-        className="absolute inset-0"
+        className="fixed inset-0"
         style={{
           background:
             "radial-gradient(circle at center, rgba(240,160,48,.2), transparent 68%)",
         }}
       />
 
-      {/* Drifting motes */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        {Array.from({ length: 14 }).map((_, i) => (
-          <motion.span
-            key={i}
-            className="absolute h-1 w-1 rounded-full bg-gold-light/60"
-            style={{ left: `${(i * 7.3 + 5) % 100}%`, top: `${(i * 11.7 + 8) % 100}%` }}
-            animate={{ opacity: [0, 0.9, 0], scale: [0.6, 1.4, 0.6] }}
-            transition={{ duration: 4 + (i % 4), repeat: Infinity, delay: i * 0.4 }}
-          />
-        ))}
-      </div>
+      {/* Falling flowers */}
+      <FallingFlowers fixed />
 
       {/* Card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-20 mx-6 w-full max-w-4xl px-4 py-8 text-center md:px-14"
+        className="relative z-20 m-auto w-full max-w-4xl px-5 py-6 md:py-14 text-center md:px-14"
       >
         <CornerFrame />
 
@@ -65,7 +56,7 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1 }}
-          className="text-4xl font-extrabold text-gold-light [text-shadow:0_2px_0_#b8501a,0_4px_24px_rgba(0,0,0,.8)] md:text-6xl"
+          className="text-[1.7rem] font-extrabold text-gold-light [text-shadow:0_2px_0_#b8501a,0_4px_24px_rgba(0,0,0,.8)] md:text-5xl"
           lang="hi"
         >
           ॐ श्री गणेशाय नमः
@@ -75,7 +66,7 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 1 }}
-          className="mx-auto mt-4 max-w-xl text-sm font-semibold leading-relaxed text-champagne [text-shadow:0_2px_12px_rgba(0,0,0,.9)] md:text-lg"
+          className="mx-auto mt-7 max-w-xl text-[0.82rem] font-semibold leading-loose text-champagne [text-shadow:0_2px_12px_rgba(0,0,0,.9)] md:text-base"
           lang="hi"
         >
           वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।
@@ -87,7 +78,7 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="mt-8 text-2xl font-bold uppercase tracking-[0.3em] text-gold [text-shadow:0_2px_14px_rgba(0,0,0,.9)] md:text-4xl"
+          className="mt-8 md:mt-12 text-lg font-bold uppercase tracking-[0.22em] text-gold [text-shadow:0_2px_14px_rgba(0,0,0,.9)] md:text-3xl"
         >
           Wedding Invitation
         </motion.p>
@@ -96,15 +87,15 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 1 }}
-          className="mt-6 font-heading text-[clamp(3.5rem,min(22vw,13vh),10rem)] leading-[0.95] text-white [text-shadow:0_4px_40px_rgba(240,160,48,.55)]"
+          className="mt-6 md:mt-10 font-heading text-[clamp(3rem,min(19vw,8.5vh),8.5rem)] leading-[0.95] text-white [text-shadow:0_4px_40px_rgba(240,160,48,.55)]"
         >
-          {couple.groom.name}
+          {couple.bride.name}
         </motion.h1>
 
         <motion.div
           animate={{ scale: [1, 1.08, 1] }}
           transition={{ repeat: Infinity, duration: 3 }}
-          className="my-3 flex items-center justify-center gap-4"
+          className="my-5 md:my-7 flex items-center justify-center gap-4"
           aria-hidden
         >
           <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold md:w-28" />
@@ -134,9 +125,9 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.95, duration: 1 }}
-          className="font-heading text-[clamp(3.5rem,min(22vw,13vh),10rem)] leading-[0.95] text-white [text-shadow:0_4px_40px_rgba(240,160,48,.55)]"
+          className="font-heading text-[clamp(3rem,min(19vw,8.5vh),8.5rem)] leading-[0.95] text-white [text-shadow:0_4px_40px_rgba(240,160,48,.55)]"
         >
-          {couple.bride.name}
+          {couple.groom.name}
         </motion.h1>
 
 
@@ -144,7 +135,7 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3, duration: 1 }}
-          className="mt-8 font-body text-4xl font-bold tracking-[0.12em] [font-variant-numeric:lining-nums] text-gold-light [text-shadow:0_2px_0_#b8501a,0_4px_20px_rgba(0,0,0,.85)] md:text-6xl"
+          className="mt-8 md:mt-12 font-body text-[1.6rem] font-bold tracking-[0.12em] [font-variant-numeric:lining-nums] text-gold-light [text-shadow:0_2px_0_#b8501a,0_4px_20px_rgba(0,0,0,.85)] md:text-5xl"
         >
           {weddingDateLabel.short}
         </motion.p>
@@ -156,7 +147,7 @@ export default function Cover({ onOpen }: CoverProps) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.96 }}
           onClick={onOpen}
-          className="mt-10 rounded-full border-2 border-gold-light bg-gradient-to-r from-gold-deep via-gold to-gold-deep px-12 py-4 text-sm font-bold uppercase tracking-[0.3em] text-ink shadow-[0_8px_30px_rgba(184,80,26,.6)] transition-shadow duration-500 hover:shadow-[0_8px_45px_rgba(240,160,48,.9)] md:text-base"
+          className="mt-10 md:mt-14 rounded-full border-2 border-gold-light bg-gradient-to-r from-gold-deep via-gold to-gold-deep px-12 py-4 text-xs font-bold uppercase tracking-[0.3em] text-ink shadow-[0_8px_30px_rgba(184,80,26,.6)] transition-shadow duration-500 hover:shadow-[0_8px_45px_rgba(240,160,48,.9)] md:text-sm"
         >
           Open Invitation
         </motion.button>
@@ -165,7 +156,7 @@ export default function Cover({ onOpen }: CoverProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="mt-8 text-[0.6rem] uppercase tracking-[0.28em] text-champagne/70"
+          className="mt-6 md:mt-10 text-[0.6rem] uppercase tracking-[0.28em] text-champagne/70"
         >
           Best experienced with sound on
         </motion.p>

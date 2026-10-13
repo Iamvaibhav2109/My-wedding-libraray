@@ -79,9 +79,15 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
             <button
               onClick={() => go("home")}
-              className="font-heading text-2xl text-foil md:text-3xl"
+              className="flex items-center"
             >
-              {couple.groom.name} &amp; {couple.bride.name}
+              <span
+                className="inline-flex items-center justify-center font-heading text-3xl leading-none tracking-[-0.12em] text-foil"
+                aria-label={`${couple.bride.name} and ${couple.groom.name}`}
+              >
+                {couple.bride.name[0]}
+                {couple.groom.name[0]}
+              </span>
             </button>
 
             <ul className="hidden items-center gap-7 lg:flex">
@@ -135,8 +141,14 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
             className="fixed inset-0 z-[300] bg-black/95 backdrop-blur-2xl lg:hidden"
           >
             <div className="flex items-center justify-between px-6 py-4">
-              <span className="font-heading text-2xl text-foil">
-                {couple.groom.name} &amp; {couple.bride.name}
+              <span className="flex items-center">
+                <span
+                className="inline-flex items-center justify-center font-heading text-3xl leading-none tracking-[-0.12em] text-foil"
+                aria-label={`${couple.bride.name} and ${couple.groom.name}`}
+              >
+                {couple.bride.name[0]}
+                {couple.groom.name[0]}
+              </span>
               </span>
               <button
                 onClick={() => setOpen(false)}

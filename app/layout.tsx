@@ -30,7 +30,7 @@ const body = localFont({
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
-const title = `${couple.groom.name} ❤️ ${couple.bride.name}`;
+const title = `${couple.bride.name} ❤️ ${couple.groom.name}`;
 const description = `Join us as we celebrate our wedding on ${weddingDateLabel.long}. ${couple.hashtag}`;
 
 export const metadata: Metadata = {
