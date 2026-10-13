@@ -34,16 +34,16 @@ export const couple = {
     parents: "S/o Smt. Sunita Agrawal & Sh. Rajendra Kumar Agrawal",
     about:
       "The one who still gets nervous before every phone call, and still smiles for an hour after every one of them.",
-    image: "/images/couple/groom.svg",
+    image: "/images/couple/groom-cartoon.svg",
   },
   bride: {
     name: "Aarohi",
     fullName: "Aarohi Agrawal",
     role: "The Bride",
-    parents: "D/o Late Smt. Anju Agrawal & Sh. Sanjay Aggarwal",
+    parents: "D/o Late Smt. Anju Agarwal & Sh. Sanjay Aggarwal",
     about:
       "The one who turns ordinary days into stories worth retelling, and quiet evenings into favourite memories.",
-    image: "/images/couple/bride.svg",
+    image: "/images/couple/bride-cartoon.svg",
   },
   hashtag: "#VaibhavKiAarohi",
   quote: "यदिदं हृदयं मम तदस्तु हृदयं तव ।\nयदिदं हृदयं तव तदस्तु हृदयं मम ॥",
@@ -307,7 +307,7 @@ export const families = {
     members: [
       { name: "Late Smt. Santosh Devi Agarwal", relation: "Grandmother" },
       { name: "Late Shri Dharam Pal Agarwal", relation: "Grandfather" },
-      { name: "Late Smt. Anju Agrawal", relation: "Mother of the Bride" },
+      { name: "Late Smt. Anju Agarwal", relation: "Mother of the Bride" },
       { name: "Sh. Sanjay Aggarwal", relation: "Father of the Bride" },
       { name: "Anushka Bhagat", relation: "Sister of the Bride" },
       { name: "Rohit Bhagat", relation: "Brother-in-law" },

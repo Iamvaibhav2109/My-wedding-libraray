@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#ffe6b8"/>
+      <stop offset=".55" stop-color="#f4a640"/>
+      <stop offset="1" stop-color="#9c3a12"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6cfa8"/>
+      <stop offset="1" stop-color="#e6ad84"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d62839"/>
+      <stop offset="1" stop-color="#8f1020"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1b8"/>
+      <stop offset=".5" stop-color="#f0b429"/>
+      <stop offset="1" stop-color="#b9770e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <g fill="#fff3d6" opacity=".35">
+    <circle cx="60" cy="70" r="5"/><circle cx="340" cy="95" r="4"/>
+    <circle cx="35" cy="210" r="3"/><circle cx="370" cy="230" r="5"/>
+    <circle cx="80" cy="140" r="2.5"/><circle cx="320" cy="40" r="3"/>
+  </g>
+
+  <!-- dupatta falling behind shoulders -->
+  <path d="M96 210 C70 300 60 420 70 500 L330 500 C340 420 330 300 304 210 Z" fill="url(#red)"/>
+
+  <!-- neck + shoulders -->
+  <path d="M170 318 L230 318 L236 370 L164 370 Z" fill="url(#skin)"/>
+  <path d="M84 500 C86 430 120 392 168 378 L232 378 C280 392 314 430 316 500 Z" fill="url(#red)"/>
+  <!-- blouse neckline + gold border -->
+  <path d="M160 376 C178 404 222 404 240 376" fill="#e6ad84"/>
+  <path d="M150 378 C176 414 224 414 250 378" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#f0b429">
+    <circle cx="120" cy="450" r="3"/><circle cx="150" cy="470" r="3"/><circle cx="250" cy="470" r="3"/>
+    <circle cx="280" cy="450" r="3"/><circle cx="200" cy="480" r="3"/><circle cx="135" cy="420" r="2.5"/>
+    <circle cx="265" cy="420" r="2.5"/>
+  </g>
+
+  <!-- necklace -->
+  <path d="M166 362 C180 398 220 398 234 362" fill="none" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+  <g fill="#d62839" stroke="#b9770e" stroke-width="1.5">
+    <circle cx="200" cy="394" r="7"/><circle cx="180" cy="386" r="4.5"/><circle cx="220" cy="386" r="4.5"/>
+  </g>
+  <path d="M193 400 L200 414 L207 400 Z" fill="#f0b429"/>
+
+  <!-- hair -->
+  <path d="M124 250 C118 170 160 138 200 138 C240 138 282 170 276 250 C266 214 240 196 200 194 C160 196 134 214 124 250 Z" fill="#2b1408"/>
+
+  <!-- face -->
+  <ellipse cx="200" cy="258" rx="70" ry="80" fill="url(#skin)"/>
+  <!-- hair framing forehead -->
+  <path d="M132 232 C140 190 170 176 200 176 C230 176 260 190 268 232 C254 206 230 196 200 196 C170 196 146 206 132 232 Z" fill="#2b1408"/>
+  <!-- centre parting with sindoor -->
+  <path d="M200 176 L200 196" stroke="#c1121f" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- dupatta over head with gold border -->
+  <path d="M110 260 C100 170 150 120 200 120 C250 120 300 170 290 260 C282 196 248 160 200 158 C152 160 118 196 110 260 Z" fill="url(#red)"/>
+  <path d="M112 252 C108 178 152 136 200 136 C248 136 292 178 288 252" fill="none" stroke="url(#gold)" stroke-width="6" stroke-dasharray="2 7" stroke-linecap="round"/>
+
+  <!-- maang tikka -->
+  <path d="M200 158 L200 196" stroke="#f0b429" stroke-width="2"/>
+  <circle cx="200" cy="204" r="9" fill="url(#gold)" stroke="#b9770e" stroke-width="1.5"/>
+  <circle cx="200" cy="204" r="4" fill="#d62839"/>
+
+  <!-- ears + jhumkas -->
+  <ellipse cx="131" cy="262" rx="8" ry="14" fill="#e6ad84"/>
+  <ellipse cx="269" cy="262" rx="8" ry="14" fill="#e6ad84"/>
+  <g fill="url(#gold)" stroke="#b9770e" stroke-width="1.2">
+    <circle cx="130" cy="282" r="5"/><path d="M120 304 C120 290 140 290 140 304 Z"/>
+    <circle cx="270" cy="282" r="5"/><path d="M260 304 C260 290 280 290 280 304 Z"/>
+  </g>
+  <g fill="#f0b429"><circle cx="122" cy="308" r="2"/><circle cx="130" cy="309" r="2"/><circle cx="138" cy="308" r="2"/>
+    <circle cx="262" cy="308" r="2"/><circle cx="270" cy="309" r="2"/><circle cx="278" cy="308" r="2"/></g>
+
+  <!-- bindi -->
+  <circle cx="200" cy="228" r="4" fill="#c1121f"/>
+
+  <!-- brows -->
+  <path d="M158 234 C168 226 180 226 188 232" fill="none" stroke="#2b1408" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M212 232 C220 226 232 226 242 234" fill="none" stroke="#2b1408" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- closed, smiling eyes with lashes -->
+  <path d="M160 254 C168 264 182 264 188 254" fill="none" stroke="#2b1408" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M212 254 C218 264 232 264 240 254" fill="none" stroke="#2b1408" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M160 254 L154 250 M240 254 L246 250" stroke="#2b1408" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- blush -->
+  <ellipse cx="160" cy="282" rx="13" ry="8" fill="#ff8a8a" opacity=".45"/>
+  <ellipse cx="240" cy="282" rx="13" ry="8" fill="#ff8a8a" opacity=".45"/>
+
+  <!-- nose + nath -->
+  <path d="M200 262 C197 274 196 280 202 282" fill="none" stroke="#c98a63" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="214" cy="286" r="11" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <circle cx="214" cy="297" r="2.5" fill="#d62839"/>
+  <path d="M224 282 C246 276 262 270 268 262" fill="none" stroke="#f0b429" stroke-width="1.5"/>
+
+  <!-- smile -->
+  <path d="M184 304 C192 314 208 314 216 304" fill="#b3243a"/>
+  <path d="M184 304 C192 310 208 310 216 304" fill="none" stroke="#8f1020" stroke-width="2" stroke-linecap="round"/>
+</svg>

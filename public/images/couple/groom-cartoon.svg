@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#ffe6b8"/>
+      <stop offset=".55" stop-color="#e98a3a"/>
+      <stop offset="1" stop-color="#7a2410"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0c39b"/>
+      <stop offset="1" stop-color="#dba277"/>
+    </linearGradient>
+    <linearGradient id="safa" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9f4a"/>
+      <stop offset=".5" stop-color="#e8573a"/>
+      <stop offset="1" stop-color="#b8261f"/>
+    </linearGradient>
+    <linearGradient id="sherwani" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff4dc"/>
+      <stop offset="1" stop-color="#e9d2a6"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1b8"/>
+      <stop offset=".5" stop-color="#f0b429"/>
+      <stop offset="1" stop-color="#b9770e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <g fill="#fff3d6" opacity=".35">
+    <circle cx="55" cy="90" r="4"/><circle cx="345" cy="70" r="5"/>
+    <circle cx="30" cy="230" r="5"/><circle cx="372" cy="205" r="3"/>
+    <circle cx="90" cy="40" r="3"/><circle cx="310" cy="150" r="2.5"/>
+  </g>
+
+  <!-- neck -->
+  <path d="M172 320 L228 320 L232 372 L168 372 Z" fill="url(#skin)"/>
+
+  <!-- sherwani -->
+  <path d="M80 500 C82 428 118 390 166 376 L234 376 C282 390 318 428 320 500 Z" fill="url(#sherwani)"/>
+  <!-- mandarin collar -->
+  <path d="M164 360 L236 360 L240 388 C214 398 186 398 160 388 Z" fill="url(#sherwani)" stroke="url(#gold)" stroke-width="4"/>
+  <!-- placket + buttons -->
+  <path d="M200 392 L200 500" stroke="url(#gold)" stroke-width="5"/>
+  <g fill="url(#gold)" stroke="#b9770e" stroke-width="1">
+    <circle cx="200" cy="412" r="5"/><circle cx="200" cy="440" r="5"/><circle cx="200" cy="468" r="5"/><circle cx="200" cy="494" r="5"/>
+  </g>
+  <!-- embroidery dots -->
+  <g fill="#e0a43a">
+    <circle cx="140" cy="430" r="3"/><circle cx="125" cy="460" r="3"/><circle cx="150" cy="482" r="3"/>
+    <circle cx="260" cy="430" r="3"/><circle cx="275" cy="460" r="3"/><circle cx="250" cy="482" r="3"/>
+  </g>
+
+  <!-- maroon stole over one shoulder -->
+  <path d="M232 378 C276 388 304 420 312 500 L270 500 C266 444 250 410 222 392 Z" fill="#8f1020"/>
+  <path d="M234 380 C274 392 298 424 306 500" fill="none" stroke="url(#gold)" stroke-width="4" stroke-dasharray="3 6"/>
+
+  <!-- pearl mala -->
+  <path d="M170 378 C176 440 224 440 230 378" fill="none" stroke="#fffaf0" stroke-width="5" stroke-dasharray="0.1 9" stroke-linecap="round"/>
+
+  <!-- ears -->
+  <ellipse cx="132" cy="262" rx="9" ry="15" fill="#dba277"/>
+  <ellipse cx="268" cy="262" rx="9" ry="15" fill="#dba277"/>
+
+  <!-- face -->
+  <ellipse cx="200" cy="260" rx="68" ry="80" fill="url(#skin)"/>
+  <!-- side hair / sideburns -->
+  <path d="M137 236 C136 254 138 266 141 272 L145 271 C143 260 143 248 144 236 Z" fill="#2b1408"/>
+  <path d="M263 236 C264 254 262 266 259 272 L255 271 C257 260 257 248 256 236 Z" fill="#2b1408"/>
+
+  <!-- safa (turban) -->
+  <path d="M120 236 C110 160 150 112 200 110 C250 112 290 160 280 236 C262 214 236 204 200 204 C164 204 138 214 120 236 Z" fill="url(#safa)"/>
+  <!-- pleats -->
+  <g fill="none" stroke="#b8261f" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <path d="M130 210 C160 170 230 150 272 190"/>
+    <path d="M124 186 C160 146 236 132 276 166"/>
+    <path d="M136 156 C170 126 230 120 262 140"/>
+  </g>
+  <!-- gold band -->
+  <path d="M122 232 C150 206 250 206 278 232" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round"/>
+  <!-- turban tail -->
+  <path d="M272 200 C300 210 310 250 300 300 C292 270 284 240 268 222 Z" fill="url(#safa)"/>
+
+  <!-- kalgi: brooch + plume -->
+  <path d="M206 150 C214 108 236 84 262 74 C246 96 236 120 226 152 Z" fill="#fffaf0" stroke="#e0d6c0" stroke-width="1.5"/>
+  <circle cx="204" cy="160" r="15" fill="url(#gold)" stroke="#b9770e" stroke-width="2"/>
+  <circle cx="204" cy="160" r="7" fill="#d62839"/>
+  <g fill="#fffaf0"><circle cx="190" cy="176" r="3"/><circle cx="204" cy="180" r="3"/><circle cx="218" cy="176" r="3"/></g>
+
+  <!-- brows -->
+  <path d="M156 238 C166 230 178 230 188 236" fill="none" stroke="#2b1408" stroke-width="5" stroke-linecap="round"/>
+  <path d="M212 236 C222 230 234 230 244 238" fill="none" stroke="#2b1408" stroke-width="5" stroke-linecap="round"/>
+  <!-- happy closed eyes -->
+  <path d="M160 258 C168 266 180 266 186 258" fill="none" stroke="#2b1408" stroke-width="4" stroke-linecap="round"/>
+  <path d="M214 258 C220 266 232 266 240 258" fill="none" stroke="#2b1408" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- blush -->
+  <ellipse cx="158" cy="284" rx="12" ry="7" fill="#ff8a6a" opacity=".35"/>
+  <ellipse cx="242" cy="284" rx="12" ry="7" fill="#ff8a6a" opacity=".35"/>
+
+  <!-- nose -->
+  <path d="M200 264 C197 276 196 282 203 284" fill="none" stroke="#b97a52" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- moustache -->
+  <path d="M176 298 C186 290 196 292 200 296 C204 292 214 290 224 298 C214 300 206 300 200 298 C194 300 186 300 176 298 Z" fill="#2b1408"/>
+  <!-- smile -->
+  <path d="M184 306 C192 318 208 318 216 306" fill="#9c2a2a"/>
+  <path d="M188 307 C196 311 204 311 212 307" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+</svg>
