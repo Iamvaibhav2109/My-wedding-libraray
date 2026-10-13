@@ -47,7 +47,7 @@ export default function Trailer() {
 
         {/* Poster / play surface */}
         <Reveal delay={0.15} className="mt-16">
-          <div className="group relative aspect-video w-full overflow-hidden rounded-[2rem] border-gold-hairline shadow-[0_40px_120px_-40px_rgba(212,175,55,.45)]">
+          <div className="group relative aspect-video w-full overflow-hidden rounded-[2rem] border-gold-hairline shadow-[0_40px_120px_-40px_rgba(240, 160, 48,.45)]">
             <motion.div style={{ y: posterY, scale: posterScale }} className="absolute inset-0">
               <Image
                 src={trailer.poster}

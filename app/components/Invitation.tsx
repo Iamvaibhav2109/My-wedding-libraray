@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiDownload, FiInstagram } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 
 import { couple, invitation, weddingDateLabel } from "@/app/data/site";
 import { CornerFrame, GoldButton, GoldDivider, Reveal, Section, SplitText } from "./Common";
@@ -48,15 +48,6 @@ function Person({
           {person.about}
         </p>
 
-        <a
-          href={person.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${person.name} on Instagram`}
-          className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-gold-light transition hover:bg-gold hover:text-ink"
-        >
-          <FiInstagram />
-        </a>
       </div>
     </Reveal>
   );

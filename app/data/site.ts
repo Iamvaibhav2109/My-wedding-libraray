@@ -21,10 +21,7 @@ export const navLinks: Nav[] = [
   { id: "home", label: "Home" },
   { id: "trailer", label: "Trailer" },
   { id: "invitation", label: "Invitation" },
-  { id: "journey", label: "Our Journey" },
-  { id: "events", label: "Events" },
   { id: "venue", label: "Venue" },
-  { id: "gallery", label: "Memories" },
   { id: "countdown", label: "Countdown" },
   { id: "families", label: "Our Families" },
 ];
@@ -32,23 +29,21 @@ export const navLinks: Nav[] = [
 export const couple = {
   groom: {
     name: "Vaibhav",
-    fullName: "Vaibhav Sharma",
+    fullName: "Vaibhav Agrawal",
     role: "The Groom",
-    parents: "Son of Mr. Rajesh Sharma & Mrs. Sunita Sharma",
+    parents: "S/o Smt. Sunita Agrawal & Sh. Rajendra Kumar Agrawal",
     about:
       "The one who still gets nervous before every phone call, and still smiles for an hour after every one of them.",
     image: "/images/couple/groom.svg",
-    instagram: "https://instagram.com",
   },
   bride: {
     name: "Aarohi",
-    fullName: "Aarohi Verma",
+    fullName: "Aarohi Agrawal",
     role: "The Bride",
-    parents: "Daughter of Mr. Anil Verma & Mrs. Meera Verma",
+    parents: "D/o Late Smt. Anju Agrawal & Sh. Sanjay Aggarwal",
     about:
       "The one who turns ordinary days into stories worth retelling, and quiet evenings into favourite memories.",
     image: "/images/couple/bride.svg",
-    instagram: "https://instagram.com",
   },
   hashtag: "#VaibhavWedsAarohi",
   quote: "Every love story is beautiful, but ours is my favourite.",
@@ -59,7 +54,7 @@ export const weddingDate = "2026-11-26T19:30:00+05:30";
 
 export const weddingDateLabel = {
   day: "Thursday",
-  short: "26 . 11 . 2026",
+  short: "26 · 11 · 2026",
   long: "26 November 2026",
   time: "7:30 PM onwards",
 };
@@ -140,7 +135,7 @@ export const events: WeddingEvent[] = [
     day: "Tuesday",
     time: "11:00 AM",
     venue: "Palace Lawns",
-    address: "The Grand Palace, Amer Road, Jaipur",
+    address: "The Pristine Hotel, GT Road, Kanpur",
     dress: "Yellow & Marigold",
     description:
       "Turmeric, sunshine and absolutely no chance of staying clean. Come prepared to be coloured.",
@@ -154,7 +149,7 @@ export const events: WeddingEvent[] = [
     day: "Tuesday",
     time: "5:00 PM",
     venue: "Courtyard Garden",
-    address: "The Grand Palace, Amer Road, Jaipur",
+    address: "The Pristine Hotel, GT Road, Kanpur",
     dress: "Green & Pastels",
     description:
       "Henna, hidden initials, folk music and the slowest, happiest afternoon of the week.",
@@ -168,7 +163,7 @@ export const events: WeddingEvent[] = [
     day: "Wednesday",
     time: "7:00 PM",
     venue: "Crystal Ballroom",
-    address: "The Grand Palace, Amer Road, Jaipur",
+    address: "The Pristine Hotel, GT Road, Kanpur",
     dress: "Indo-Western Glam",
     description:
       "Both families, one dance floor, and a rivalry that has been rehearsing for months.",
@@ -182,7 +177,7 @@ export const events: WeddingEvent[] = [
     day: "Thursday",
     time: "7:30 PM",
     venue: "Mandap Lawns",
-    address: "The Grand Palace, Amer Road, Jaipur",
+    address: "The Pristine Hotel, GT Road, Kanpur",
     dress: "Traditional Formal",
     description:
       "Seven vows, seven rounds, and one promise we intend to keep for the rest of our lives.",
@@ -196,7 +191,7 @@ export const events: WeddingEvent[] = [
     day: "Friday",
     time: "8:00 PM",
     venue: "Grand Banquet Hall",
-    address: "The Grand Palace, Amer Road, Jaipur",
+    address: "The Pristine Hotel, GT Road, Kanpur",
     dress: "Black Tie / Cocktail",
     description:
       "The celebration where we finally get to sit down, eat, and thank every single one of you.",
@@ -208,26 +203,26 @@ export const events: WeddingEvent[] = [
 
 export const venue = {
   eyebrow: "The Venue",
-  name: "The Grand Palace",
-  tagline: "A courtyard of arches, marigolds and candlelight.",
-  address: "Amer Road, Jaipur, Rajasthan 302002, India",
+  name: "The Pristine Hotel",
+  tagline: "Where our families gather to celebrate.",
+  address: "111/18 A, GT Road, Harsh Nagar, Kanpur, Uttar Pradesh 208012",
   description:
-    "Built around a century-old courtyard, the palace opens into lawns that glow with a thousand lights after sunset. Every ceremony happens within these walls, so you never have to move a bag twice.",
-  image: "/images/venue/hall.svg",
+    "Join us at the Pristine Hotel on GT Road, Kanpur, as we celebrate the wedding of Aarohi and Vaibhav on Thursday, 26 November 2026.",
+  image: "/images/venue/pristine-hotel.svg",
   mapImage: "/images/venue/map.svg",
-  /** Replace with your venue's Google Maps link + embed URL. */
-  mapUrl: "https://maps.google.com/?q=Amer+Road+Jaipur",
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=Pristine+Hotel+111%2F18+A+GT+Road+Harsh+Nagar+Kanpur",
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Amer%20Road%20Jaipur&output=embed",
+    "https://www.google.com/maps?q=Pristine%20Hotel%20GT%20Road%20Harsh%20Nagar%20Kanpur&output=embed",
   highlights: [
-    { icon: "🅿️", title: "Valet Parking", text: "Complimentary valet at the north gate." },
-    { icon: "🛏️", title: "Guest Rooms", text: "Blocked rooms for outstation family." },
-    { icon: "✈️", title: "35 min from Airport", text: "Jaipur International (JAI)." },
-    { icon: "🚉", title: "20 min from Station", text: "Jaipur Junction (JP)." },
+    { icon: "✈️", title: "Kanpur Airport (KNU)", text: "Approx. 15 km · about 35 min by road." },
+    { icon: "🚉", title: "Kanpur Central Station", text: "Approx. 6 km · about 20 min by road." },
+    { icon: "🛬", title: "Lucknow Airport (LKO)", text: "Approx. 85 km · about 2 hr 15 min by road." },
+    { icon: "🚆", title: "Lucknow Junction", text: "Approx. 80 km · about 2 hr by road." },
   ],
   contacts: [
-    { name: "Rohit (Groom's side)", phone: "+91 98765 43210" },
-    { name: "Nidhi (Bride's side)", phone: "+91 98765 12345" },
+    { name: "Pristine Hotel", phone: "+91 79914 74772" },
+    { name: "Pristine Hotel (Alternate)", phone: "+91 92363 96943" },
   ],
 };
 
@@ -286,38 +281,33 @@ export const families = {
     "Two families, one celebration. These are the people who raised us, spoiled us and are the reason this day exists at all.",
   groom: {
     side: `${couple.groom.name}'s Side`,
-    house: "The Sharma Family",
+    house: "The Agrawal Family",
     icon: "🤵",
     blessing: "Welcoming you with open arms and far too much food.",
     members: [
-      { name: "Mr. Rajesh Sharma", relation: "Father of the Groom" },
-      { name: "Mrs. Sunita Sharma", relation: "Mother of the Groom" },
-      { name: "Mr. Mohan Lal Sharma", relation: "Grandfather" },
-      { name: "Mrs. Kamla Devi Sharma", relation: "Grandmother" },
-      { name: "Rohit Sharma", relation: "Elder Brother" },
-      { name: "Priya Sharma", relation: "Sister-in-law" },
-      { name: "Ananya Sharma", relation: "Sister" },
-      { name: "Mr. Suresh Sharma", relation: "Uncle (Chacha ji)" },
-      { name: "Mrs. Rekha Sharma", relation: "Aunt (Chachi ji)" },
-      { name: "Kabir Sharma", relation: "Cousin" },
+      { name: "Late Smt. Vimala Devi Agrawal", relation: "Grandmother" },
+      { name: "Late Shri Kailash Nath Agrawal", relation: "Grandfather" },
+      { name: "Smt. Sunita Agrawal", relation: "Mother of the Groom" },
+      { name: "Sh. Rajendra Kumar Agrawal", relation: "Father of the Groom" },
+      { name: "Shivani Agrawal", relation: "Sister of the Groom" },
+      { name: "Neetesh Agrawal", relation: "Brother-in-law" },
+      { name: "Priyansh Agrawal", relation: "Nephew" },
+      { name: "Tanush Agrawal", relation: "Nephew" },
     ],
   } satisfies FamilySide,
   bride: {
     side: `${couple.bride.name}'s Side`,
-    house: "The Verma Family",
+    house: "The Agarwal Family",
     icon: "👰",
     blessing: "Sending our girl off with every blessing we have.",
     members: [
-      { name: "Mr. Anil Verma", relation: "Father of the Bride" },
-      { name: "Mrs. Meera Verma", relation: "Mother of the Bride" },
-      { name: "Mr. Ram Prasad Verma", relation: "Grandfather" },
-      { name: "Mrs. Shanti Devi Verma", relation: "Grandmother" },
-      { name: "Aditya Verma", relation: "Brother" },
-      { name: "Sneha Verma", relation: "Sister" },
-      { name: "Mr. Vikas Verma", relation: "Uncle (Mama ji)" },
-      { name: "Mrs. Nidhi Verma", relation: "Aunt (Mami ji)" },
-      { name: "Ishita Verma", relation: "Cousin" },
-      { name: "Arjun Verma", relation: "Cousin" },
+      { name: "Late Smt. Santosh Devi Agarwal", relation: "Grandmother" },
+      { name: "Late Shri Dharam Pal Agarwal", relation: "Grandfather" },
+      { name: "Late Smt. Anju Agrawal", relation: "Mother of the Bride" },
+      { name: "Sh. Sanjay Aggarwal", relation: "Father of the Bride" },
+      { name: "Atharv Agarwal", relation: "Brother of the Bride" },
+      { name: "Anushka Agarwal", relation: "Sister of the Bride" },
+      { name: "Rohit Agrawal", relation: "Brother-in-law" },
     ],
   } satisfies FamilySide,
 };

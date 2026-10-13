@@ -52,7 +52,7 @@ export default function JourneySection({ item, index, total }: Props) {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at center, rgba(212,175,55,.14), transparent 68%)",
+            "radial-gradient(circle at center, rgba(240, 160, 48,.14), transparent 68%)",
         }}
       />
 

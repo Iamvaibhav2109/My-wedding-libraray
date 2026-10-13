@@ -68,7 +68,7 @@ export default function Journey() {
                   <span
                     className={`block rounded-full transition-all duration-500 ${
                       activeSection === index
-                        ? "h-3 w-3 bg-gold shadow-[0_0_14px_rgba(212,175,55,.9)]"
+                        ? "h-3 w-3 bg-gold shadow-[0_0_14px_rgba(240, 160, 48,.9)]"
                         : "h-1.5 w-1.5 bg-white/30 group-hover:bg-gold/70"
                     }`}
                   />

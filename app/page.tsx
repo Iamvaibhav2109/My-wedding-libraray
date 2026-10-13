@@ -5,12 +5,9 @@ import { useEffect, useState } from "react";
 
 import Cover from "./components/cover/Cover";
 import CountdownSection from "./components/CountdownSection";
-import Events from "./components/Events";
 import Families from "./components/Families";
-import Gallery from "./components/Gallery";
 import Hero from "./components/hero/Hero";
 import Invitation from "./components/Invitation";
-import Journey from "./components/Journey/Journey";
 import Navbar from "./components/Navbar";
 import ThankYou from "./components/ThankYou";
 import Trailer from "./components/Trailer";
@@ -41,13 +38,13 @@ export default function Home() {
 
       <Invitation />
 
-      <Journey />
+      {/* Hidden for now: <Journey /> */}
 
-      <Events />
+      {/* Hidden for now: <Events /> */}
 
       <Venue />
 
-      <Gallery />
+      {/* Hidden for now: <Gallery /> */}
 
       <CountdownSection />
 

@@ -177,7 +177,7 @@ export function Section({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 50% at 50% 0%, rgba(212,175,55,.09), transparent 70%)",
+            "radial-gradient(60% 50% at 50% 0%, rgba(240, 160, 48,.09), transparent 70%)",
         }}
       />
       <div className="relative z-10">{children}</div>
