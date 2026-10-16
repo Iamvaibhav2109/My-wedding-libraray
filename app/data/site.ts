@@ -23,7 +23,7 @@ export const navLinks: Nav[] = [
   { id: "venue", label: "Venue" },
   { id: "countdown", label: "Countdown" },
   { id: "families", label: "Our Families" },
-  { id: "trailer", label: "Trailer" },
+  { id: "trailer", label: "Video Invite" },
 ];
 
 export const couple = {
@@ -34,7 +34,7 @@ export const couple = {
     parents: "S/o Smt. Sunita Agrawal & Sh. Rajendra Kumar Agrawal",
     about:
       "The one who still gets nervous before every phone call, and still smiles for an hour after every one of them.",
-    image: "/images/couple/groom-cartoon.svg",
+    image: "/images/couple/groom-photo.jpg",
   },
   bride: {
     name: "Aarohi",
@@ -43,7 +43,7 @@ export const couple = {
     parents: "D/o Late Smt. Anju Agarwal & Sh. Sanjay Aggarwal",
     about:
       "The one who turns ordinary days into stories worth retelling, and quiet evenings into favourite memories.",
-    image: "/images/couple/bride-cartoon.svg",
+    image: "/images/couple/bride-photo.jpg",
   },
   hashtag: "#VaibhavKiAarohi",
   quote: "यदिदं हृदयं मम तदस्तु हृदयं तव ।\nयदिदं हृदयं तव तदस्तु हृदयं मम ॥",
@@ -63,14 +63,14 @@ export const weddingDateLabel = {
 /* ── Wedding trailer ─────────────────────────────────────── */
 
 export const trailer = {
-  eyebrow: "Wedding Trailer",
-  title: "Our Story, In Motion",
+  eyebrow: "Video Invitation",
+  title: "Watch Our Invitation",
   description:
-    "A ninety-second film of everything words could not hold — the laughter, the tears, the dance floor at 2 AM.",
-  /** Drop your film at /public/video/trailer.mp4 (the poster shows until then). */
-  src: "/video/trailer.mp4",
+    "A short video invitation from our families to yours. Press play and celebrate with us as Aarohi and Vaibhav begin their forever.",
+  /** Portrait (9:16) invite video in /public/video. */
+  src: "/video/invite.mp4",
   poster: "/images/trailer/poster.svg",
-  duration: "01:32",
+  duration: "00:40",
 };
 
 /* ── Invitation ──────────────────────────────────────────── */
@@ -212,7 +212,7 @@ export const venue = {
   address: "111/18 A, GT Road, Harsh Nagar, Kanpur, Uttar Pradesh 208012",
   description:
     "Join us at the Pristine Hotel on GT Road, Kanpur, as we celebrate the wedding of Aarohi and Vaibhav on Thursday, 26 November 2026.",
-  image: "/images/venue/pristine-hotel.svg",
+  image: "/images/venue/pristine-hotel.jpg",
   mapImage: "/images/venue/map.svg",
   mapUrl:
     "https://www.google.com/maps/search/?api=1&query=Pristine+Hotel+111%2F18+A+GT+Road+Harsh+Nagar+Kanpur",

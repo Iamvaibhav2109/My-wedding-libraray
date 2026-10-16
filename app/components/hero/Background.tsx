@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export default function Background() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-
       {/* Background Image */}
       <motion.div
         className="absolute inset-0 will-change-transform"
@@ -21,11 +20,30 @@ export default function Background() {
           ease: "easeInOut",
         }}
       >
+        {/* Phones: the wide hands photo across the top, then the portrait
+            couple-in-the-arch photo filling the rest of the tall screen, so
+            neither photo is cropped down to a sliver. The top padding keeps
+            the hands photo clear of the fixed menu bar. */}
+        <div className="flex h-full w-full flex-col bg-[#140804] pt-20 md:hidden">
+          <div
+            className="relative aspect-[2000/735] w-full shrink-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/couple-hands.jpg')" }}
+          >
+            {/* Soft fade into the photo below */}
+            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-[#2a1208]" />
+          </div>
+          <div
+            className="relative flex-1 bg-cover bg-[position:50%_40%]"
+            style={{ backgroundImage: "url('/images/couple-arch.jpg')" }}
+          >
+            <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#2a1208] to-transparent" />
+          </div>
+        </div>
+
+        {/* Wider screens: the hands photo full-bleed. */}
         <div
-          className="h-full w-full bg-cover bg-[position:50%_62%]"
-          style={{
-            backgroundImage: "url('/images/couple-arch.jpg')",
-          }}
+          className="hidden h-full w-full bg-cover bg-[position:54%_55%] md:block"
+          style={{ backgroundImage: "url('/images/couple-hands.jpg')" }}
         />
       </motion.div>
 
@@ -129,7 +147,6 @@ export default function Background() {
 
       {/* Decorative Light Rays */}
       <div className="absolute inset-0 hidden overflow-hidden opacity-20 md:block">
-
         <motion.div
           animate={{
             rotate: [0, 5, 0],
@@ -171,9 +188,7 @@ export default function Background() {
           blur-sm
         "
         />
-
       </div>
-
     </div>
   );
 }

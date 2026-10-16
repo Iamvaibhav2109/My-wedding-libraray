@@ -1,23 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FiExternalLink, FiMapPin, FiPhone } from "react-icons/fi";
 
 import { venue } from "@/app/data/site";
 import { CornerFrame, GoldButton, Reveal, Section, SectionHeading } from "./Common";
 
 export default function Venue() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
-
   return (
     <Section id="venue" tone="darker">
       <SectionHeading
@@ -27,12 +17,13 @@ export default function Venue() {
         subtitle={venue.tagline}
       />
 
-      <div ref={ref} className="mx-auto mt-20 max-w-7xl px-6">
+      <div className="mx-auto mt-20 max-w-7xl px-6">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           {/* Hero image */}
           <Reveal from="left">
-            <div className="relative h-[26rem] overflow-hidden rounded-[2rem] border-gold-hairline md:h-[34rem]">
-              <motion.div style={{ y: imageY }} className="absolute -inset-y-16 inset-x-0">
+            {/* Same 3:2 shape as the hotel photo, so the whole building shows. */}
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border-gold-hairline">
+              <div className="absolute inset-0">
                 <Image
                   src={venue.image}
                   alt={venue.name}
@@ -40,8 +31,8 @@ export default function Venue() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               <CornerFrame />
             </div>
           </Reveal>
