@@ -21,7 +21,17 @@ export default function MusicButton() {
     if (!audio) return;
     audio.volume = music.volume;
 
-    const events = ["pointerdown", "touchstart", "keydown"] as const;
+    // Phones only grant "may play sound" when a finger lifts (touchend /
+    // pointerup), not on the first press, so listen for those too. The very
+    // first scratch on the cover card then starts the song.
+    const events = [
+      "pointerdown",
+      "pointerup",
+      "touchstart",
+      "touchend",
+      "click",
+      "keydown",
+    ] as const;
     const stopListening = () =>
       events.forEach((e) => window.removeEventListener(e, startOnGesture));
     function startOnGesture() {
