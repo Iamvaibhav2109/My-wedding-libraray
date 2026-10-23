@@ -6,28 +6,45 @@ import { FiMusic, FiPause } from "react-icons/fi";
 
 import { music } from "@/app/data/site";
 
-type MusicButtonProps = {
-  enabled: boolean;
-};
-
-export default function MusicButton({ enabled }: MusicButtonProps) {
+export default function MusicButton() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const [playing, setPlaying] = useState(false);
   // No track file yet? Then there is nothing to control — hide the button.
   const [available, setAvailable] = useState(true);
 
+  // Start the song as soon as the page loads. Browsers block sound until the
+  // visitor first interacts, so if autoplay is refused we start on their first
+  // tap, click or key press anywhere (scratching the cover card counts).
   useEffect(() => {
-    if (!enabled || !audioRef.current) return;
-
     const audio = audioRef.current;
+    if (!audio) return;
     audio.volume = music.volume;
+
+    const events = ["pointerdown", "touchstart", "keydown"] as const;
+    const stopListening = () =>
+      events.forEach((e) => window.removeEventListener(e, startOnGesture));
+    function startOnGesture() {
+      audio!
+        .play()
+        .then(() => {
+          setPlaying(true);
+          stopListening();
+        })
+        .catch(() => {});
+    }
 
     audio
       .play()
       .then(() => setPlaying(true))
-      .catch(() => setPlaying(false));
-  }, [enabled]);
+      .catch(() => {
+        events.forEach((e) =>
+          window.addEventListener(e, startOnGesture, { passive: true }),
+        );
+      });
+
+    return stopListening;
+  }, []);
 
   const toggle = () => {
     const audio = audioRef.current;
@@ -37,7 +54,10 @@ export default function MusicButton({ enabled }: MusicButtonProps) {
       audio.pause();
       setPlaying(false);
     } else {
-      audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+      audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => setPlaying(false));
     }
   };
 
@@ -49,7 +69,7 @@ export default function MusicButton({ enabled }: MusicButtonProps) {
         ref={audioRef}
         src={music.src}
         loop
-        preload="none"
+        preload="auto"
         onError={() => setAvailable(false)}
       />
 

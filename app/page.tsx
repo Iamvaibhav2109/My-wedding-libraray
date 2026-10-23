@@ -32,7 +32,7 @@ export default function Home() {
 
       <Navbar visible={opened} />
 
-      <Hero musicEnabled={opened} />
+      <Hero />
 
       <Invitation />
 
