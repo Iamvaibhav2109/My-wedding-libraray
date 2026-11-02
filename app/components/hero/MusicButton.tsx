@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FiMusic, FiPause } from "react-icons/fi";
 
-import { music } from "@/app/data/site";
+import { music, VIDEO_TOGGLE_EVENT } from "@/app/data/site";
 
 export default function MusicButton() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -12,6 +12,8 @@ export default function MusicButton() {
   const [playing, setPlaying] = useState(false);
   // No track file yet? Then there is nothing to control — hide the button.
   const [available, setAvailable] = useState(true);
+  const videoOpen = useRef(false);
+  const resumeAfterVideo = useRef(false);
 
   // Start the song as soon as the page loads. Browsers block sound until the
   // visitor first interacts, so if autoplay is refused we start on their first
@@ -35,6 +37,7 @@ export default function MusicButton() {
     const stopListening = () =>
       events.forEach((e) => window.removeEventListener(e, startOnGesture));
     function startOnGesture() {
+      if (videoOpen.current) return;
       audio!
         .play()
         .then(() => {
@@ -54,6 +57,33 @@ export default function MusicButton() {
       });
 
     return stopListening;
+  }, []);
+
+  // The video invite has its own sound: hush the song while it's open, and
+  // bring it back on close only if it was playing before.
+  useEffect(() => {
+    const onVideoToggle = (e: Event) => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      const open = (e as CustomEvent<boolean>).detail;
+      if (open === videoOpen.current) return;
+      videoOpen.current = open;
+
+      if (open) {
+        resumeAfterVideo.current = !audio.paused;
+        audio.pause();
+        setPlaying(false);
+      } else if (resumeAfterVideo.current) {
+        resumeAfterVideo.current = false;
+        audio
+          .play()
+          .then(() => setPlaying(true))
+          .catch(() => setPlaying(false));
+      }
+    };
+
+    window.addEventListener(VIDEO_TOGGLE_EVENT, onVideoToggle);
+    return () => window.removeEventListener(VIDEO_TOGGLE_EVENT, onVideoToggle);
   }, []);
 
   const toggle = () => {

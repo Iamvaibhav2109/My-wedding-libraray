@@ -83,7 +83,7 @@ export default function Invitation() {
 
               <div className="mt-8 flex flex-col items-center gap-2">
                 <span className="font-heading text-5xl text-foil md:text-7xl">
-                  {couple.bride.name}
+                  {couple.groom.name}
                 </span>
                 <motion.span
                   whileInView={{ scale: [1, 1.12, 1] }}
@@ -94,7 +94,7 @@ export default function Invitation() {
                   &amp;
                 </motion.span>
                 <span className="font-heading text-5xl text-foil md:text-7xl">
-                  {couple.groom.name}
+                  {couple.bride.name}
                 </span>
               </div>
 
@@ -149,7 +149,7 @@ export default function Invitation() {
 
         {/* Couple */}
         <div className="mt-24 flex flex-col items-center gap-16 md:flex-row md:items-start md:gap-10">
-          <Person person={couple.bride} side="left" />
+          <Person person={couple.groom} side="left" />
 
           <Reveal delay={0.2} className="md:pt-24">
             <div className="text-center">
@@ -167,7 +167,7 @@ export default function Invitation() {
             </div>
           </Reveal>
 
-          <Person person={couple.groom} side="right" />
+          <Person person={couple.bride} side="right" />
         </div>
       </div>
     </Section>

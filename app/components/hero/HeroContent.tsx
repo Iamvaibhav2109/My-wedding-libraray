@@ -33,7 +33,7 @@ export default function HeroContent() {
             transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
             className={`font-heading text-6xl leading-tight text-white md:text-8xl ${nameShadow}`}
           >
-            {couple.bride.name}
+            {couple.groom.name}
           </motion.h1>
 
           <motion.span
@@ -51,7 +51,7 @@ export default function HeroContent() {
             transition={{ duration: 1.3, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className={`font-heading text-6xl leading-tight text-white md:text-8xl ${nameShadow}`}
           >
-            {couple.groom.name}
+            {couple.bride.name}
           </motion.h1>
         </div>
 

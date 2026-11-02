@@ -66,7 +66,7 @@ export const trailer = {
   eyebrow: "Video Invitation",
   title: "Watch Our Invitation",
   description:
-    "A short video invitation from our families to yours. Press play and celebrate with us as Aarohi and Vaibhav begin their forever.",
+    "A short video invitation from our families to yours. Press play and celebrate with us as Vaibhav and Aarohi begin their forever.",
   /** Portrait (9:16) invite video in /public/video. */
   src: "/video/invite.mp4",
   poster: "/images/trailer/poster.svg",
@@ -95,6 +95,9 @@ export const invitation = {
 
 /** Background music. Drop an mp3 at /public/music/wedding.mp3 to enable it —
  *  the player hides itself automatically while the file is missing. */
+/** Fired with `detail: true/false` as the video invite opens and closes. */
+export const VIDEO_TOGGLE_EVENT = "wedding-video-toggle";
+
 export const music = {
   src: "/music/wedding.mp3",
   volume: 0.35,
@@ -211,7 +214,7 @@ export const venue = {
   tagline: "Where our families gather to celebrate.",
   address: "111/18 A, GT Road, Harsh Nagar, Kanpur, Uttar Pradesh 208012",
   description:
-    "Join us at the Pristine Hotel on GT Road, Kanpur, as we celebrate the wedding of Aarohi and Vaibhav on Thursday, 26 November 2026.",
+    "Join us at the Pristine Hotel on GT Road, Kanpur, as we celebrate the wedding of Vaibhav and Aarohi on Thursday, 26 November 2026.",
   image: "/images/venue/pristine-hotel.jpg",
   mapImage: "/images/venue/map.svg",
   mapUrl:
@@ -324,6 +327,6 @@ export const thankYou = {
   title: "Thank You",
   message:
     "For every blessing, every journey made, and every wish sent our way — thank you. You did not just attend our wedding, you made it ours.",
-  signature: "Aarohi & Vaibhav",
+  signature: "Vaibhav & Aarohi",
   image: "/images/couple/thankyou.svg",
 };

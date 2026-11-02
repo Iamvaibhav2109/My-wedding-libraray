@@ -83,11 +83,11 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
             >
               <span
                 className="flex flex-col items-center gap-1"
-                aria-label={`${couple.bride.name} and ${couple.groom.name}`}
+                aria-label={`${couple.groom.name} and ${couple.bride.name}`}
               >
                 <span className="font-body text-3xl font-semibold leading-none tracking-[-0.2em] text-foil">
-                  {couple.bride.name[0]}
                   {couple.groom.name[0]}
+                  {couple.bride.name[0]}
                 </span>
                 <span aria-hidden className="flex items-center gap-1">
                   <span className="h-px w-3 bg-gold/70" />
@@ -151,11 +151,11 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
               <span className="flex items-center">
                 <span
                 className="flex flex-col items-center gap-1"
-                aria-label={`${couple.bride.name} and ${couple.groom.name}`}
+                aria-label={`${couple.groom.name} and ${couple.bride.name}`}
               >
                 <span className="font-body text-3xl font-semibold leading-none tracking-[-0.2em] text-foil">
-                  {couple.bride.name[0]}
                   {couple.groom.name[0]}
+                  {couple.bride.name[0]}
                 </span>
                 <span aria-hidden className="flex items-center gap-1">
                   <span className="h-px w-3 bg-gold/70" />

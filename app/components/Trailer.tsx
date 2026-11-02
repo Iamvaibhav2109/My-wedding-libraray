@@ -5,7 +5,7 @@ import { useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { FiPlay, FiX } from "react-icons/fi";
 
-import { couple, trailer } from "@/app/data/site";
+import { couple, trailer, VIDEO_TOGGLE_EVENT } from "@/app/data/site";
 import { CornerFrame, GoldDivider, Reveal, Section, SplitText } from "./Common";
 
 /** True in the browser, false during server render — no effect needed. */
@@ -14,6 +14,12 @@ const noopSubscribe = () => () => {};
 export default function Trailer() {
   const [open, setOpen] = useState(false);
   const [missing, setMissing] = useState(false);
+
+  // Dispatched inside the click so the song can resume within the user gesture.
+  const toggleVideo = (next: boolean) => {
+    setOpen(next);
+    window.dispatchEvent(new CustomEvent(VIDEO_TOGGLE_EVENT, { detail: next }));
+  };
   // The player is portalled to <body> so it sits above the fixed navbar
   // (inside this section it would be trapped under the section's z-index).
   const mounted = useSyncExternalStore(
@@ -58,7 +64,7 @@ export default function Trailer() {
                   metadata loads until someone presses play. */}
               <video
                 src={`${trailer.src}#t=0.5`}
-                aria-label={`${couple.bride.name} and ${couple.groom.name} video invitation`}
+                aria-label={`${couple.groom.name} and ${couple.bride.name} video invitation`}
                 muted
                 playsInline
                 preload="metadata"
@@ -72,7 +78,7 @@ export default function Trailer() {
 
             {/* Play button with radiating rings */}
             <button
-              onClick={() => setOpen(true)}
+              onClick={() => toggleVideo(true)}
               aria-label="Play video invitation"
               className="absolute inset-0 flex flex-col items-center justify-center gap-6"
             >
@@ -128,11 +134,11 @@ export default function Trailer() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onClick={() => setOpen(false)}
+                onClick={() => toggleVideo(false)}
                 className="fixed inset-0 z-[400] flex items-center justify-center bg-black/95 px-4 backdrop-blur-xl"
               >
                 <button
-                  onClick={() => setOpen(false)}
+                  onClick={() => toggleVideo(false)}
                   aria-label="Close video"
                   className="absolute right-6 top-6 text-3xl text-gold-light"
                 >

@@ -102,9 +102,9 @@ export default function Cover({ onOpen }: CoverProps) {
           transition={{ delay: 0.7, duration: 1 }}
           className="mt-3 flex flex-wrap items-baseline justify-center gap-x-3 font-heading text-[clamp(2.6rem,10vw,5.5rem)] leading-tight text-white [text-shadow:0_4px_40px_rgba(240,160,48,.55)] md:mt-4 md:gap-x-5"
         >
-          <span>{couple.bride.name}</span>
-          <span className="text-[0.6em] text-gold">&amp;</span>
           <span>{couple.groom.name}</span>
+          <span className="text-[0.6em] text-gold">&amp;</span>
+          <span>{couple.bride.name}</span>
         </motion.h1>
 
         <motion.div
